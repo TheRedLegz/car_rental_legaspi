@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "d07a3dc8-ce1f-4135-811e-420672c2d400"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -120,6 +123,10 @@
               "devServerTarget": "car-rental-final-build:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

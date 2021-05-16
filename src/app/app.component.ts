@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Car } from './car';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //carList = this.store.collection('cars').valueChanges();
+  
+  
+  carList : any = [
+    new Car('a', 'Tesla', 'assets\\cars\\tesla.webp', 100),
+    {
+      key: 'a',
+      carName : "Tesla",
+      carImage: "assets\\cars\\tesla.webp",
+      rentPrice : 100,
+    },
+    {
+      key: 'b',
+      carName : "Honda Civic",
+      carImage: "assets\\cars\\honda_civic.jpg",
+      rentPrice : 30,
+    },
+    {
+      key: 'c',
+      carName : "Mitsubishi Lancer",
+      carImage: "assets\\cars\\mitsubishi_lancer.jpg",
+      rentPrice : 50,
+    },
+  ];
+
+  constructor(private store : AngularFirestore) {}
+
   title = 'car-rental-final-build';
 }
