@@ -1,0 +1,15 @@
+<div class = "navBar">
+    <app-nav-bar
+        (selected) = "showAddCarWindow($event)"
+    >
+    </app-nav-bar>
+</div>
+<div class = "carList">
+    <app-car-card 
+        *ngFor = "let carItem of carList"
+        [carName] = "carItem.carName"
+        [rentPrice] = "carItem.rentPrice"
+        [carImage] = "carItem.carImage"
+        [isRented] = "false">
+    </app-car-card>
+</div>

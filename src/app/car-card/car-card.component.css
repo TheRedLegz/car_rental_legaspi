@@ -1,0 +1,63 @@
+* {
+    color: black;
+}
+
+h1 {
+    color: black;
+    margin: 0;
+    font-size: 24px;
+}
+h2 {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+#rentCar {
+    margin-top: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#rentCar:hover {
+    background-color: white;
+    color: rgb(48, 47, 47);
+    border-color: white;
+}
+
+#carCard {
+    margin: 30px 0px 0px 30px;
+    width: 300px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    box-shadow: 2px 2px 20px #888888;
+    display: inline-block;
+}
+
+#carCard:hover {
+    transform: scale(1.02);
+    transition-duration: .1s;
+    cursor: pointer;
+}
+
+#carDesc {
+    padding: 20px 0px 20px 10px;
+    background-color: darkcyan;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#carImg {
+    border-radius: 10px 10px 0px 0px;
+    background-color: white;
+    height: 135px;
+    width: 300px;
+}
+
+#carImg > img {
+    border-radius: 10px 10px 0px 0px;
+    height: 135px;
+    width: 300px;
+    object-fit: cover;
+}

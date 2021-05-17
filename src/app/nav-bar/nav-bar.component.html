@@ -1,0 +1,21 @@
+<div id="navBarHeader">
+    <h1>DEMPTO'S AUTOMOBILES</h1>
+</div>
+<ul id="navMenu">
+    <!-- <li>
+        Rent a Car
+    </li>
+    <li>
+        Rented Cars
+    </li> -->
+</ul>
+
+<button id="addCar" (click) = "addCarOpen()">Add a Car</button>
+
+<div id="addCarWindow"></div>
+<app-add-car-window
+    *ngIf = "addCarWindowIsVisible == true"
+    (closeWindow) = "addCarClose($event)"
+>
+
+</app-add-car-window>

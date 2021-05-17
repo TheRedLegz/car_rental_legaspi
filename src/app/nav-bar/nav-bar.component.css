@@ -1,0 +1,41 @@
+#navBarHeader > h1{
+    padding: 10px;
+    font-size: 30px;
+}
+
+#navMenu {
+    padding: 0;
+    list-style: none;
+}
+
+#navMenu li {
+    padding: 10px 0px 10px 10px;
+    font-size: 24px;
+    height: 30px;
+}
+
+#navMenu li:hover {
+    cursor: pointer;
+    background-color: rgb(154, 241, 212);
+}
+
+#addCar {
+    margin-top: 50px;
+    border: 0;
+    padding: 10px;
+    margin-left: 10px;
+    background-color:aquamarine;
+    color: rgb(54, 54, 54);
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    bottom: 0;
+}
+
+
+#addCar:hover {
+    cursor: pointer;
+    color: white;
+    background-color:darkcyan;
+}

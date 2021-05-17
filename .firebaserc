@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "car-rental---appsdev2": {
+      "hosting": {
+        "car-rental-final-build": [
+          "car-rental---appsdev2"
+        ]
+      }
+    }
+  }
+}

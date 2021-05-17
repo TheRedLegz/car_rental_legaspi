@@ -1,0 +1,16 @@
+<div id = "carCard" (click) = "rent()">
+    <div id = "carImg">
+        <img [src]="carImage">
+    </div>
+    <div id = "carDesc">
+        <h1>{{carName}}</h1>
+        <br/>
+        <h2>Price: ${{rentPrice}}/day</h2>
+        <br/>
+        <h2>Available: {{!isRented ? "Yes" : "No"}}</h2>
+        <br/>
+        <h2 *ngIf = "isRented">Date rented: {{dateRented | date}}</h2>
+        <br/>
+        <h2 *ngIf = "isRented">To be returned: {{dateToReturn | date}}</h2>
+    </div>
+</div>
