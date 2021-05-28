@@ -42,7 +42,7 @@ export class AddCarWindowComponent implements OnInit {
 
           let tempRentPrice = parseFloat(rentPrice);
           this.store.collection("cars").add(
-            new Car(`${n}`, carName, url, tempRentPrice, true).toMap(),
+            new Car(`${n}`, carName, url, tempRentPrice, true, 0).toMap(),
           ).then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
           }).catch((error) => {

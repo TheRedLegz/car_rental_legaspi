@@ -79,3 +79,20 @@ h2 {
     color: darkcyan;
     background-color:white;
 }
+
+.showChunking {
+    margin-top: 20px;
+    margin-left: 120px;
+    border: 0;
+    padding: 10px;
+    background-color:darkcyan;
+    color: rgb(54, 54, 54);
+    text-align: center;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.showChunking:hover {
+    cursor: pointer;
+    color: white;
+}

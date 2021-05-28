@@ -12,7 +12,7 @@ export class AppComponent {
   carListFromFirebase = this.store.collection('cars').valueChanges().forEach((value) => {
     this.carList = []
     value.forEach((doc) => {
-      this.carList.push(new Car(doc["key"], doc["carName"], doc["carImage"], doc["rentPrice"], doc["isAvailable"]))
+      this.carList.push(new Car(doc["key"], doc["carName"], doc["carImage"], doc["rentPrice"], doc["isAvailable"], doc["starRating"]))
     })
   });
 

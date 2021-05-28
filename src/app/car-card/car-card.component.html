@@ -8,11 +8,15 @@
         <h2>Price: ${{rentPrice}}/day</h2>
         <br/>
         <h2>Available: {{isAvailable ? "Yes" : "No"}}</h2>
+        <br/>
+        <h2>User Ratings: {{starRating == undefined ? "0" : (starRating * 10).toFixed(2)}} / 10</h2>
         <!-- <br/>
         <h2 *ngIf = "!isAvailable">Date rented: {{dateRented | date}}</h2>
         <br/>
         <h2 *ngIf = "!isAvailable">To be returned: {{dateToReturn | date}}</h2> -->
         <input type="button" class = "carCardButton" [value] = "isAvailable ? 'Rent' : 'Return'" (click) = "rent()"/>
         <input type="button" class = "carCardButton" value = "Review" (click) = "review()"/>
+        <br/>
+        <input type="button" class = "showChunking" value = "View chunking of reviews" (click) = "getChunkedReview()"/>
     </div>
 </div>
