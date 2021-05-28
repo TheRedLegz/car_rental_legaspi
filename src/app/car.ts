@@ -5,11 +5,12 @@ export class Car {
     rentPrice: number;
     isAvailable: boolean = true;
 
-    constructor(key: string, carName: string, carImage: string, rentPrice: number) {
+    constructor(key: string, carName: string, carImage: string, rentPrice: number, isAvailable : boolean) {
         this.key = key;
         this.carName = carName;
         this.carImage = carImage;
         this.rentPrice = rentPrice;
+        this.isAvailable = isAvailable;
     }
 
     toMap() : Object {

@@ -7,10 +7,10 @@
         <br/>
         <h2>Price: ${{rentPrice}}/day</h2>
         <br/>
-        <h2>Available: {{!isRented ? "Yes" : "No"}}</h2>
+        <h2>Available: {{isAvailable ? "Yes" : "No"}}</h2>
+        <!-- <br/>
+        <h2 *ngIf = "!isAvailable">Date rented: {{dateRented | date}}</h2>
         <br/>
-        <h2 *ngIf = "isRented">Date rented: {{dateRented | date}}</h2>
-        <br/>
-        <h2 *ngIf = "isRented">To be returned: {{dateToReturn | date}}</h2>
+        <h2 *ngIf = "!isAvailable">To be returned: {{dateToReturn | date}}</h2> -->
     </div>
 </div>
