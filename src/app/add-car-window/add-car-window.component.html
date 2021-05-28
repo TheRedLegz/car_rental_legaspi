@@ -1,12 +1,13 @@
 <div id="addCarWindow">
     <div id="addCarForm">
-        <form (submit) = "addCar()">
+        <form (submit) = "addCar(carName.value, rentPrice.value)">
             <label for = "carName">Car Name:</label><br>
-            <input type = "text" placeholder = "Please enter car name" name = "carName" required><br>
+            <input type = "text" placeholder = "Please enter car name" name = "carName" #carName required><br>
             <label for = "rentPrice">Rent Price:</label><br>
-            <input type = "text" placeholder = "Please enter rent price / day" name = "rentPrice" required><br>
+            <input type = "text" placeholder = "Please enter rent price / day" name = "rentPrice" #rentPrice required><br>
             <label for = "carImage">Select an image:</label><br>
-            <input type = "file" name = "carImage" (change) = "addImage($event)"required><br>
+            <input type = "file" name = "carImage" (change) = "onFileSelected($event)" accept = "image/*" #carImage><br>
+
             <input id = "submitButton" type = "submit">
             <button id = "closeButton" (click) = "closeWindowAction()">Close</button>
         </form>

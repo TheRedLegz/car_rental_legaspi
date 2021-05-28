@@ -9,6 +9,11 @@ import { CarCardComponent } from './car-card/car-card.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RentCarWindowComponent } from './rent-car-window/rent-car-window.component';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask,
+} from "@angular/fire/storage";
 import { AngularFireModule} from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
@@ -25,6 +30,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
