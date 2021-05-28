@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, Input, Output, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { map, tap } from 'rxjs/operators';
 import { Car } from '../car';
 
 @Component({
@@ -23,11 +24,42 @@ export class CarCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  review(): void {
+    let sentiment = prompt("Write a short review about the car")
+    if (sentiment != null) {
+      alert(sentiment)
+      this.store.collection("cars").ref.where("key", "==", this.key).get().then((querySnapshot) => {
+        if (querySnapshot.empty) {
+          console.log("No data found")
+        }
+        else {
+          querySnapshot.forEach((doc) => {
+            let reviews :string[] = []
+            reviews = doc.data()["reviews"]
+            
+            if (reviews == undefined) {
+              reviews = []
+            }
+            reviews.push(sentiment)
+            this.store.collection("cars").doc(doc.id).update({reviews: reviews})
+          })
+        }
+      })
+    }
+  }
   rent(): void {
     if (!this.isAvailable) {
       alert("Car successfully returned!")
-      this.isAvailable = !this.isAvailable;
+      this.store.collection("cars").ref.where("key", "==", this.key).get().then((querySnapshot) => {
+        if (querySnapshot.empty) {
+          console.log("No data found")
+        }
+        else {
+          querySnapshot.forEach((doc) => {
+            this.store.collection("cars").doc(doc.id).update({isAvailable: !this.isAvailable})
+          })
+        }
+      })
     }
     else {
       let x = prompt("How many days would you like to rent this car?")
@@ -36,16 +68,13 @@ export class CarCardComponent implements OnInit {
           alert("ERROR! You must input a number")
         }
         else {
-
           this.store.collection("cars").ref.where("key", "==", this.key).get().then((querySnapshot) => {
-            console.log(querySnapshot.empty)
-            
             if (querySnapshot.empty) {
               console.log("No data found")
             }
             else {
               querySnapshot.forEach((doc) => {
-                this.store.collection("cars").doc(doc.id).update(new Car(this.key, this.carName, this.carImage, this.rentPrice, !this.isAvailable).toMap())
+                this.store.collection("cars").doc(doc.id).update({isAvailable: !this.isAvailable})
               })
             }
           })

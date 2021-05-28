@@ -1,4 +1,4 @@
-<div id = "carCard" (click) = "rent()">
+<div id = "carCard">
     <div id = "carImg">
         <img [src]="carImage">
     </div>
@@ -12,5 +12,7 @@
         <h2 *ngIf = "!isAvailable">Date rented: {{dateRented | date}}</h2>
         <br/>
         <h2 *ngIf = "!isAvailable">To be returned: {{dateToReturn | date}}</h2> -->
+        <input type="button" class = "carCardButton" [value] = "isAvailable ? 'Rent' : 'Return'" (click) = "rent()"/>
+        <input type="button" class = "carCardButton" value = "Review" (click) = "review()"/>
     </div>
 </div>
